@@ -1,4 +1,22 @@
 <HTML>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#hide_button").click(function(){
+                $("#notes").hide();
+                $("#hide_button").hide();
+                $("#show_button").show();
+            });
+            $("#show_button").click(function(){
+                $("#notes").show();
+                $("#show_button").hide();
+                $("#hide_button").show();
+            });
+            $("#show_button").hide();
+        });
+    </script>
+</head>
 <body>
 {% if message != None and message != "" %}
     {{message}}
@@ -11,9 +29,13 @@ Notes
         <input type="submit" value="Submit"/>
     </form>
     <hr>
+    <div id="notes">
     {% for note in notes %}
         {{note}}
         <hr>
     {% endfor %}
+    </div>
+    <button id="hide_button">Hide Notes</button>
+    <button id="show_button">Show Notes</button>
 </body>
 </HTML>
