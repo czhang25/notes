@@ -22,6 +22,18 @@
                 // $("#fortune_cookie").text("Life is a...");
                 $("#fortune_cookie").load("/static/fortune.txt");
             });
+
+            //data = ["hello there", "hello there", "is this working? ", "My new comment", "My new comment"]
+            // Update content controls
+            $("#update_content").click(function(){
+                $.get("/static/notes.json", function(data) {
+                    output = "";
+                    for (i in data) {
+                        output += data[i] + "<hr/>";
+                    }
+                    $("#content").html(output);
+                });
+            });
         });
     </script>
 </head>
@@ -48,5 +60,9 @@ Notes
     <hr>
     <div id="fortune_cookie">Life...</div>
     <button id="show_fortune">Show Fortune</button>
+    <hr>
+    <div id="content"></div>
+    <button id="update_content">Update Content</button>
+    </hr>
 </body>
 </HTML>
