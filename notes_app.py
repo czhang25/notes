@@ -28,10 +28,8 @@ def post_notes():
     #return render_template("notes.html", message=message, notes=my_notes)
     return render_template("notes.html", message=message)
 
-@app.route("/content/<filter>")
-def get_content(filter=None):
-    items = notes.get_notes()
-    items.append(filter)
-    items = [item for item in items if filter in item]
+@app.route("/content/<search>")
+def get_content(search=None):
+    items = notes.get_notes(search)
     data = { "data": items }
     return jsonify(data)
