@@ -1,1 +1,1 @@
-{"_default": {"1": {"type": "apple", "count": 7}, "2": {"type": "peach", "count": 3}, "3": {"type": "orange", "count": 12}, "4": {"type": "strawberry", "count": 14}}}
+{"_default": {"1": {"count": 7, "type": "apple"}, "2": {"count": 3, "type": "peach"}, "3": {"count": 12, "type": "orange"}, "4": {"count": 14, "type": "strawberry"}, "5": {"count": 7, "type": "apple"}, "6": {"count": 3, "type": "peach"}}}
